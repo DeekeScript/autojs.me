@@ -1,0 +1,73 @@
+/* 自定义样式 */
+.VPHero .text {
+  font-size: 1rem !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.5 !important;
+}
+
+/* 脚本商业化导航项突出显示 */
+.vp-nav-links a[href="/links"],
+.vp-nav-links a[href="/links/"],
+.nav-link[href="/links"],
+.nav-link[href="/links/"] {
+  position: relative !important;
+  color: #ff6b6b !important;
+  font-weight: bold !important;
+}
+
+.vp-nav-links a[href="/links"]:hover,
+.vp-nav-links a[href="/links/"]:hover,
+.nav-link[href="/links"]:hover,
+.nav-link[href="/links/"]:hover {
+  color: #ff5252 !important;
+}
+
+/* Hot标签动画效果 - 使用更通用的选择器 */
+.vp-nav-links a[href="/links"]::before,
+.vp-nav-links a[href="/links/"]::before,
+.nav-link[href="/links"]::before,
+.nav-link[href="/links/"]::before {
+  content: 'HOT';
+  position: absolute;
+  top: -10px;
+  right: -30px;
+  background: linear-gradient(135deg, #ff6b6b, #ff5252);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 3px 7px;
+  border-radius: 12px;
+  animation: hotPulse 2s ease-in-out infinite;
+  box-shadow: 0 2px 6px rgba(255, 107, 107, 0.5);
+  line-height: 1.2;
+  white-space: nowrap;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@keyframes hotPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .vp-nav-links a[href="/links"]::before,
+  .vp-nav-links a[href="/links/"]::before,
+  .nav-link[href="/links"]::before,
+  .nav-link[href="/links/"]::before {
+    top: -8px;
+    right: -25px;
+    font-size: 9px;
+    padding: 2px 5px;
+  }
+}
+

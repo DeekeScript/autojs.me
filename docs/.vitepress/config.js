@@ -9,7 +9,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/guide' },
+      { text: '指南', link: '/guide/' },
       { 
         text: '第一代API文档', 
         link: '/api-v1/controls' 
@@ -19,12 +19,8 @@ export default defineConfig({
         link: '/api-v2/v9' 
       },
       { 
-        text: '官网与相关链接', 
-        link: '/links',
-        items: [
-          { text: '交流QQ群', link: 'https://jq.qq.com/?_wv=1027&k=642877773' },
-          { text: '官方包下载', link: '/links#download' }
-        ]
+        text: '🔥 脚本商业化', 
+        link: '/links'
       }
     ],
     
@@ -114,16 +110,41 @@ export default defineConfig({
             { text: 'zip - 压缩与解压', link: '/api-v2/zip' }
           ]
         }
+      ],
+      '/guide/': [
+        {
+          text: '指南',
+          items: [
+            { text: '简介', link: '/guide/' }
+          ]
+        },
+        {
+          text: '快速上手',
+          items: [
+            { text: '编写第一行代码', link: '/guide/quickstart' },
+            { text: '使用内置模块和函数', link: '/guide/using-modules' },
+            { text: '打包为应用', link: '/guide/build-apk' },
+            { text: '项目与资源', link: '/guide/using-project' },
+            { text: '项目配置文件', link: '/guide/project' }
+          ]
+        },
+        {
+          text: '其他',
+          items: [
+            { text: '第一代API文档', link: '/api-v1/controls' },
+            { text: '常见问题', link: '/guide/qa' }
+          ]
+        }
       ]
     },
     
     socialLinks: [
-      { icon: 'github', link: 'https://github.com' }
+      { icon: 'github', link: 'https://github.com/DeekeScript/autojs.me' }
     ],
     
     footer: {
-      message: 'Auto.js Pro 文档',
-      copyright: 'Copyright © 2024 Auto.js Pro'
+      message: '<a href="/disclaimer">免责声明</a> | Auto.js Pro 文档镜像站点',
+      copyright: 'Copyright © 2025 Auto.js Pro | 所有内容版权归原作者所有 | 联系邮箱：miniphper@gmail.com'
     },
     
     search: {

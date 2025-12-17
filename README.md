@@ -1,6 +1,6 @@
 # Auto.js Pro 文档网站
 
-这是 Auto.js Pro 官方网站 (http://autojs.cc/) 的完整文档网站，使用 VitePress 构建。
+这是 Auto.js Pro 文档网站，使用 VitePress 构建。
 
 ## 项目特性
 
