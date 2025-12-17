@@ -1,0 +1,231 @@
+/* API 文档页面专用样式 - VitePress 风格 */
+
+.api-doc-page {
+  min-height: calc(100vh - 200px);
+  background-color: #ffffff;
+}
+
+.api-doc-container {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* 左侧导航栏 - VitePress 风格 */
+.api-doc-sidebar {
+  width: 272px;
+  min-width: 272px;
+  background-color: #ffffff;
+  border-right: 1px solid rgba(60, 60, 60, 0.12);
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  padding: 0;
+  font-size: 13px;
+}
+
+.api-doc-nav {
+  padding: 12px 0;
+}
+
+.api-doc-nav h2 {
+  display: none;
+}
+
+.api-doc-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.api-doc-nav li {
+  margin: 0;
+  padding: 0;
+}
+
+/* 分组样式 - VitePress 风格 */
+.vp-sidebar-group {
+  margin-bottom: 24px;
+}
+
+.vp-sidebar-group:first-child {
+  margin-top: 0;
+}
+
+.vp-sidebar-heading {
+  margin: 0;
+  padding: 8px 24px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #8e8e93;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+}
+
+.vp-sidebar-heading.active {
+  color: #3b82f6;
+}
+
+.vp-sidebar-title {
+  display: block;
+}
+
+.vp-sidebar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vp-sidebar-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.api-doc-nav a,
+.vp-link {
+  display: block;
+  padding: 4px 24px;
+  color: #213547;
+  text-decoration: none;
+  transition: color 0.2s;
+  border-left: 2px solid transparent;
+  font-size: 13px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.api-doc-nav a:hover,
+.vp-link:hover {
+  color: #3b82f6;
+}
+
+.api-doc-nav a.active,
+.vp-link.active {
+  color: #3b82f6;
+  border-left-color: #3b82f6;
+  font-weight: 500;
+  background-color: rgba(59, 130, 246, 0.08);
+}
+
+/* 右侧内容区域 */
+.api-doc-content {
+  flex: 1;
+  background-color: white;
+  padding: 2rem 3rem;
+  min-height: calc(100vh - 200px);
+}
+
+.api-doc-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 1rem;
+}
+
+.api-doc-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 100px;
+}
+
+.api-doc-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.api-doc-section:first-of-type h2 {
+  border-top: none;
+  padding-top: 0;
+}
+
+.api-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.api-item h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+}
+
+.api-item p {
+  margin-bottom: 0.75rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.api-item ul {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.api-item li {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.code-block {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .api-doc-container {
+    flex-direction: column;
+  }
+
+  .api-doc-sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+    height: auto;
+    max-height: 300px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .api-doc-content {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .api-doc-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .api-doc-content h1 {
+    font-size: 2rem;
+  }
+
+  .api-doc-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .api-item {
+    padding: 1rem;
+  }
+}
+
