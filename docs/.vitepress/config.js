@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Auto.js Pro - 学习与编程JavaScript IDE',
+  title: 'Auto.js Pro',
   description: 'Auto.js Pro 是一个在 Android、鸿蒙平台编写、运行 JavaScript 代码的集成开发环境。支持代码补全、单步调试、图形化设计，可构建为独立 apk 应用。提供第一代API和第二代API文档，帮助开发者快速开发自动化脚本和商业应用。',
   lang: 'zh-CN',
   base: '/',
