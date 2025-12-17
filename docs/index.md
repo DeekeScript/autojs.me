@@ -1,5 +1,8 @@
 ---
 layout: home
+title: Auto.js Pro - 学习与编程JavaScript IDE | 自动化脚本开发文档
+description: Auto.js Pro 是一个在 Android、鸿蒙平台编写、运行 JavaScript 代码的集成开发环境。提供完整的API文档、开发指南和脚本商业化解决方案。支持Node.js引擎、VSCode调试、代码补全等功能。
+keywords: Auto.js, Auto.js Pro, 自动化脚本, JavaScript IDE, Android自动化, 脚本开发, Auto.js文档, Auto.js API, 第一代API, 第二代API, V9
 
 hero:
   name: Auto.js Pro

@@ -1,13 +1,35 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Auto.js Pro',
-  description: '学习与编程JavaScript IDE',
+  title: 'Auto.js Pro - 学习与编程JavaScript IDE',
+  description: 'Auto.js Pro 是一个在 Android、鸿蒙平台编写、运行 JavaScript 代码的集成开发环境。支持代码补全、单步调试、图形化设计，可构建为独立 apk 应用。提供第一代API和第二代API文档，帮助开发者快速开发自动化脚本和商业应用。',
   lang: 'zh-CN',
   base: '/',
   
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    // SEO Meta Tags
+    ['meta', { name: 'keywords', content: 'Auto.js, Auto.js Pro, 自动化脚本, JavaScript IDE, Android自动化, 脚本开发, 自动化工具, Auto.js文档, Auto.js API, 第一代API, 第二代API, V9, 脚本商业化, DeekeScript' }],
+    ['meta', { name: 'author', content: 'Auto.js Pro' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { name: 'googlebot', content: 'index, follow' }],
+    // Open Graph Tags
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'Auto.js Pro - 学习与编程JavaScript IDE' }],
+    ['meta', { property: 'og:description', content: 'Auto.js Pro 是一个在 Android、鸿蒙平台编写、运行 JavaScript 代码的集成开发环境。支持代码补全、单步调试、图形化设计，可构建为独立 apk 应用。' }],
+    ['meta', { property: 'og:image', content: '/logo.png' }],
+    ['meta', { property: 'og:url', content: 'https://autojs.me' }],
+    ['meta', { property: 'og:site_name', content: 'Auto.js Pro 文档' }],
+    ['meta', { property: 'og:locale', content: 'zh_CN' }],
+    // Twitter Card Tags
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: 'Auto.js Pro - 学习与编程JavaScript IDE' }],
+    ['meta', { name: 'twitter:description', content: 'Auto.js Pro 是一个在 Android、鸿蒙平台编写、运行 JavaScript 代码的集成开发环境。' }],
+    ['meta', { name: 'twitter:image', content: '/logo.png' }],
+    // Additional SEO
+    ['meta', { name: 'application-name', content: 'Auto.js Pro' }],
+    ['meta', { name: 'apple-mobile-web-app-title', content: 'Auto.js Pro' }],
+    ['meta', { name: 'theme-color', content: '#667eea' }],
   ],
   
   themeConfig: {
@@ -154,6 +176,14 @@ export default defineConfig({
     search: {
       provider: 'local'
     }
+  },
+  
+  // SEO优化：生成干净的URL
+  cleanUrls: true,
+  
+  // Markdown配置
+  markdown: {
+    lineNumbers: true
   }
 })
 

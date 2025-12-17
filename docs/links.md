@@ -1,3 +1,9 @@
+---
+title: DeekeScript 脚本商业化解决方案 - Auto.js Pro 商业化
+description: DeekeScript 提供一站式自动化脚本商业化解决方案，帮助开发者快速将 Auto.js 脚本转化为商业应用。包含完整的开发工具链、SaaS卡密系统和在线打包服务。
+keywords: DeekeScript, Auto.js 商业化, 脚本商业化, 自动化脚本变现, Auto.js Pro 商业化
+---
+
 # DeekeScript 一站式自动化脚本商业化解决方案
 
 **官方文档**：[https://doc.deeke.cn](https://doc.deeke.cn)

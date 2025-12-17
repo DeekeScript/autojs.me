@@ -1,3 +1,9 @@
+---
+title: Auto.js Pro 指南 - 快速上手开发自动化脚本
+description: Auto.js Pro 开发指南，包含快速上手教程、项目配置、打包部署等完整内容。学习如何使用 Auto.js Pro 开发自动化脚本和商业应用。
+keywords: Auto.js Pro 指南, Auto.js 教程, 自动化脚本开发, Auto.js 快速上手
+---
+
 # 简介
 
 ## Auto.js Pro 可以做什么
