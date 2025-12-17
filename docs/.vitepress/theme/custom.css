@@ -7,40 +7,63 @@
   line-height: 1.5 !important;
 }
 
-/* 脚本商业化导航项突出显示 */
-.vp-nav-links a[href="/links"],
-.vp-nav-links a[href="/links/"],
-.nav-link[href="/links"],
-.nav-link[href="/links/"] {
+/* 脚本商业化导航项突出显示 - 匹配实际HTML结构 */
+a.VPLink[href="/links.html"],
+a.VPLink[href="/links"],
+a[href="/links.html"],
+a[href="/links"] {
   position: relative !important;
   color: #ff6b6b !important;
   font-weight: bold !important;
+  animation: navLinkPulse 2s ease-in-out infinite !important;
+  display: inline-block !important;
 }
 
-.vp-nav-links a[href="/links"]:hover,
-.vp-nav-links a[href="/links/"]:hover,
-.nav-link[href="/links"]:hover,
-.nav-link[href="/links/"]:hover {
+a.VPLink[href="/links.html"]:hover,
+a.VPLink[href="/links"]:hover,
+a[href="/links.html"]:hover,
+a[href="/links"]:hover {
   color: #ff5252 !important;
+  animation: navLinkPulseHover 1.5s ease-in-out infinite !important;
 }
 
-/* Hot标签动画效果 - 使用更通用的选择器 */
-.vp-nav-links a[href="/links"]::before,
-.vp-nav-links a[href="/links/"]::before,
-.nav-link[href="/links"]::before,
-.nav-link[href="/links/"]::before {
+/* 文字轻微跳动动画 */
+@keyframes navLinkPulse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* 悬停时增强动画 */
+@keyframes navLinkPulseHover {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+/* Hot标签动画效果 */
+a.VPLink[href="/links.html"]::before,
+a.VPLink[href="/links"]::before,
+a[href="/links.html"]::before,
+a[href="/links"]::before {
   content: 'HOT';
   position: absolute;
-  top: -10px;
-  right: -30px;
+  top: 6px;
+  right: -20px;
   background: linear-gradient(135deg, #ff6b6b, #ff5252);
   color: white;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: bold;
-  padding: 3px 7px;
-  border-radius: 12px;
+  padding: 2px 6px;
+  border-radius: 10px;
   animation: hotPulse 2s ease-in-out infinite;
-  box-shadow: 0 2px 6px rgba(255, 107, 107, 0.5);
+  box-shadow: 0 2px 4px rgba(255, 107, 107, 0.4);
   line-height: 1.2;
   white-space: nowrap;
   z-index: 100;
@@ -60,14 +83,62 @@
 
 /* 移动端适配 */
 @media (max-width: 768px) {
-  .vp-nav-links a[href="/links"]::before,
-  .vp-nav-links a[href="/links/"]::before,
-  .nav-link[href="/links"]::before,
-  .nav-link[href="/links/"]::before {
-    top: -8px;
-    right: -25px;
-    font-size: 9px;
-    padding: 2px 5px;
+  a.VPLink[href="/links.html"]::before,
+  a.VPLink[href="/links"]::before,
+  a[href="/links.html"]::before,
+  a[href="/links"]::before {
+    top: 8px;
+    right: -15px;
+    font-size: 8px;
+    padding: 1px 4px;
+  }
+}
+
+/* 确保HOT标签不会超出容器 */
+.VPNavBarMenu {
+  overflow: visible !important;
+}
+
+.VPNavBarMenuLink {
+  overflow: visible !important;
+}
+
+/* 通知栏样式增强 */
+.notification-bar-wrapper {
+  animation: slideDown 0.3s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 当有通知栏时，导航栏下移 */
+body:has(.notification-bar-wrapper) .VPNavBar {
+  margin-top: 50px;
+  transition: margin-top 0.3s ease-out;
+}
+
+/* 当没有通知栏时，导航栏回到顶部 */
+.VPNavBar {
+  transition: margin-top 0.3s ease-out;
+}
+
+@media (max-width: 768px) {
+  body:has(.notification-bar-wrapper) .VPNavBar {
+    margin-top: 45px;
   }
 }
 
