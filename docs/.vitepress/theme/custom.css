@@ -136,6 +136,23 @@ body:has(.notification-bar-wrapper) .VPNavBar {
   transition: margin-top 0.3s ease-out;
 }
 
+/* 当有通知栏时，侧边栏需要向下偏移，避免标题和页面标题重合 */
+body:has(.notification-bar-wrapper) .VPSidebar {
+  margin-top: 50px;
+  transition: margin-top 0.3s ease-out;
+}
+
+/* 侧边栏标题的sticky定位需要调整 */
+body:has(.notification-bar-wrapper) .VPSidebar .vp-sidebar-heading {
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  body:has(.notification-bar-wrapper) .VPSidebar {
+    margin-top: 45px;
+  }
+}
+
 @media (max-width: 768px) {
   body:has(.notification-bar-wrapper) .VPNavBar {
     margin-top: 45px;
