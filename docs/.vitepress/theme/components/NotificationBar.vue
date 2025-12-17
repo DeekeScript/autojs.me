@@ -3,10 +3,10 @@
     <div class="notification-bar">
       <div class="notification-content">
         <span class="notification-text">
-          热烈祝贺DeekeScript自动化平台正式对外发布，填补了自动化脚本快速商业化的市场空白，官网：
+          祝贺DeekeScript自动化脚本平台正式发布，一站式商用自动化APP解决方案。官网：
           <a href="https://doc.deeke.cn" target="_blank" class="notification-link">https://doc.deeke.cn</a>
         </span>
-        <button @click="closeNotification" class="notification-close" aria-label="关闭通知">
+        <button @click.stop.prevent="closeNotification" class="notification-close" aria-label="关闭通知">
           ×
         </button>
       </div>
@@ -18,6 +18,14 @@
 import { ref, onMounted, watch } from 'vue'
 
 const showNotification = ref(false)
+const isMobile = ref(false)
+
+// 检测是否为移动端
+const checkIsMobile = () => {
+  if (typeof window !== 'undefined') {
+    isMobile.value = window.innerWidth <= 768
+  }
+}
 
 const getTodayKey = () => {
   const today = new Date()
@@ -25,12 +33,23 @@ const getTodayKey = () => {
 }
 
 const checkNotificationStatus = () => {
+  // 移动端不显示通知
+  if (isMobile.value) {
+    showNotification.value = false
+    return
+  }
+  
   const todayKey = getTodayKey()
   const closed = localStorage.getItem(todayKey)
   showNotification.value = !closed
 }
 
-const closeNotification = () => {
+const closeNotification = (event) => {
+  // 阻止事件冒泡和默认行为
+  if (event) {
+    event.preventDefault()
+    event.stopPropagation()
+  }
   const todayKey = getTodayKey()
   localStorage.setItem(todayKey, 'true')
   showNotification.value = false
@@ -38,22 +57,43 @@ const closeNotification = () => {
 
 // 监听通知栏显示状态，动态调整页面padding
 watch(showNotification, (newVal) => {
-  if (typeof document !== 'undefined') {
+  if (typeof document !== 'undefined' && !isMobile.value) {
     const body = document.body
     if (newVal) {
       // 显示通知栏时，给body添加padding-top
       body.style.paddingTop = '50px'
     } else {
-      // 关闭通知栏时，移除padding-top，页面回到顶部
+      // 关闭通知栏时，移除padding-top
       body.style.paddingTop = '0'
-      // 滚动到顶部
-      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }
 })
 
+// 监听窗口大小变化
+const handleResize = () => {
+  const wasMobile = isMobile.value
+  checkIsMobile()
+  
+  // 如果从桌面端切换到移动端，隐藏通知并移除padding
+  if (wasMobile !== isMobile.value && isMobile.value) {
+    showNotification.value = false
+    if (typeof document !== 'undefined') {
+      document.body.style.paddingTop = '0'
+    }
+  } else if (wasMobile !== isMobile.value && !isMobile.value) {
+    // 如果从移动端切换到桌面端，重新检查通知状态
+    checkNotificationStatus()
+  }
+}
+
 onMounted(() => {
+  checkIsMobile()
   checkNotificationStatus()
+  
+  // 监听窗口大小变化
+  if (typeof window !== 'undefined') {
+    window.addEventListener('resize', handleResize)
+  }
 })
 </script>
 
