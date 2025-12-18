@@ -1,0 +1,1 @@
+import{_ as l,c as i,o as e,ag as o}from"./chunks/framework.DfL_BkQ-.js";const q=JSON.parse('{"title":"常见问题","description":"","frontmatter":{},"headers":[],"relativePath":"guide/qa.md","filePath":"guide/qa.md"}'),r={name:"guide/qa.md"};function t(h,a,d,u,n,s){return e(),i("div",null,[...a[0]||(a[0]=[o("",28)])])}const b=l(r,[["render",t]]);export{q as __pageData,b as default};

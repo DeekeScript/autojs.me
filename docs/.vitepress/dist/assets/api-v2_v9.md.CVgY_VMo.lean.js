@@ -1,0 +1,1 @@
+import{_ as i,c as a,o as n,ag as l}from"./chunks/framework.DfL_BkQ-.js";const c=JSON.parse('{"title":"V9","description":"","frontmatter":{},"headers":[],"relativePath":"api-v2/v9.md","filePath":"api-v2/v9.md"}'),e={name:"api-v2/v9.md"};function p(t,s,h,r,k,d){return n(),a("div",null,[...s[0]||(s[0]=[l("",12)])])}const E=i(e,[["render",p]]);export{c as __pageData,E as default};
