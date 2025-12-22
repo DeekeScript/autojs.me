@@ -170,7 +170,7 @@ export default defineConfig({
     
     footer: {
       message: '<a href="/disclaimer">免责声明</a> | Auto.js Pro 文档镜像站点',
-      copyright: 'Copyright © 2025 Auto.js Pro | 所有内容版权归原作者所有 | 联系邮箱：miniphper@gmail.com'
+      copyright: 'Copyright © 2025 Auto.js Pro | 所有内容版权归原作者所有 | 联系邮箱：miniphper@gmail.com | © 2025 鄂ICP备2023007944号-4'
     },
     
     search: {
